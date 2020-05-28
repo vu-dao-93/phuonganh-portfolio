@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Sleepy Bear's corner
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
+heading: Sleepy Bear's corner
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
   title: Why Kaldi

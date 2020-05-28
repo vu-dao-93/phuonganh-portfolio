@@ -45,6 +45,7 @@ export const IndexPageTemplate = ({
             color: 'white',
             lineHeight: '1',
             padding: '0.25em',
+            textAlign: 'center'
           }}
         >
           {title}
@@ -87,13 +88,6 @@ export const IndexPageTemplate = ({
                   </div>
                 </div>
                 <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
