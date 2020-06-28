@@ -6,13 +6,13 @@ import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, pageTitle }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
+        <title>{title}{pageTitle ? ` - ${pageTitle}` : ''}</title>
         <meta name="description" content={description} />
 
         <link
