@@ -50,7 +50,7 @@ collections:
           - {
               label: "About Me",
               name: aboutMe,
-              widget: list,
+              widget: object,
               fields:
                 [
                   { label: Title, name: title, widget: string },
@@ -73,9 +73,9 @@ collections:
               widget: list,
               fields:
                 [
-                  { label: Company, name: company, widget: text },
+                  { label: Company, name: company, widget: string },
                   { label: Title, name: title, widget: string },
-                  { label: Time, name: time, widget: text },
+                  { label: Time, name: time, widget: string },
                 ],
             }
           - {
@@ -84,7 +84,7 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: text },
+                  { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: markdown },
                 ],
             }
@@ -94,12 +94,12 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Title, name: title, widget: text },
+                  { label: Title, name: title, widget: string },
                   {
                     label: Details,
                     name: details,
                     widget: list,
-                    fields: [{ label: Item, name: item, widget: text }],
+                    field: { label: Item, name: item, widget: string },
                   },
                 ],
             }
