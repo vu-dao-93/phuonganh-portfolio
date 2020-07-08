@@ -99,7 +99,6 @@ collections:
                     label: Details,
                     name: details,
                     widget: list,
-                    field: { label: Item, name: item, widget: string },
                   },
                 ],
             }
