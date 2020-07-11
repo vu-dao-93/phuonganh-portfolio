@@ -1,9 +1,13 @@
 ---
-templateKey: index-page
-title: Sleepy Bear's space
-image: /img/home-jumbotron.jpg
+contact: []
 heading: Sleepy Bear's space
 subheading: Support sustainable farming while enjoying a cup
+templateKey: index-page
+title: Sleepy Bear's space
+avatar: /img/phuonganh_avatar-400.png
+aboutMe:
+  title: About me
+  content: Sleepy Bear cu-te phô mai que
 mainpitch:
   title: Why Kaldi
   description: >
@@ -11,10 +15,20 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
+experience:
+  - company: " CARE Education English Center"
+    title: Content Team Leader
+    time: Mar 2020 – Now
+  - company: Ken Media Services
+    title: English Content Writer
+    time: May 2018 - May 2020
+interest:
+  title: Interest
+  details:
+    - Language
+    - Psychology
+    - Movies
+    - Travel
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -66,4 +80,12 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+image: /img/home-jumbotron.jpg
+aboutPage:
+  title: What is this?
+  description: Whatever you imagine it to be.
+description: Kaldi is the ultimate spot for coffee lovers who want to learn
+  about their java’s origin and support the farmers that grew it. We take coffee
+  production, roasting and brewing seriously and we’re glad to pass that
+  knowledge to anyone.
 ---
