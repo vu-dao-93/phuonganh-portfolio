@@ -14,55 +14,39 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
+  experience,
+  avatar,
+  aboutMe,
+  aboutPage
 }) => (
   <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-            textAlign: 'center'
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
+    <div className="columns">
+      <div className="column is-10 is-offset-1">
+        <div className="columns">
+          <div className="column is-4">
+            <section className="section" style={{
+              backgroundColor: '#ffca34',
+            }}>
+              <img src={avatar.childImageSharp.fluid.src} />
+            </section>
+          </div>
+          <div className="column">
+            <section className="section">
+              <div className="content">
+                <h3 className="">Experiences</h3>
+                {experience.map(({ company, title, time }) => (
+                  <div className="content">
+                    <div className="has-text-weight-bold  label">{title}</div>
+                    <div className="">{company}</div>
+                    <div className="">{time}</div>
+                  </div>
+                ))}
+              </div>
+              <h1 className="title">{aboutPage.title}</h1>
+              <p>{aboutPage.description}</p>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
     <section className="section section--gradient">
@@ -118,6 +102,10 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  aboutMe: PropTypes.shape({
+    title: PropTypes.string,
+    content: PropTypes.string
+  })
 }
 
 const IndexPage = ({ data }) => {
@@ -133,6 +121,10 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        aboutMe={frontmatter.aboutMe}
+        aboutPage={frontmatter.aboutPage}
+        experience={frontmatter.experience}
+        avatar={frontmatter.avatar}
       />
     </Layout>
   )
@@ -180,6 +172,26 @@ export const pageQuery = graphql`
           }
           heading
           description
+        }
+        avatar {
+          childImageSharp {
+            fluid(maxWidth: 500, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        experience {
+          company
+          time
+          title
+        }
+        aboutMe {
+          content
+          title
+        }
+        aboutPage {
+          description
+          title
         }
       }
     }
