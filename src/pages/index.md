@@ -4,7 +4,7 @@ heading: Sleepy Bear's space
 subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
 title: Sleepy Bear's space
-avatar: /img/phuonganh_avatar-400.png
+avatar: /img/phuonganh_avatar-600.png
 aboutMe:
   title: About me
   content: Sleepy Bear cu-te phô mai que
