@@ -4,7 +4,7 @@ heading: Sleepy Bear's space
 subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
 title: Sleepy Bear's space
-avatar: /img/phuonganh_avatar-600.png
+avatar: /img/phuonganh_avatar-1000.png
 aboutMe:
   title: About me
   content: On the path to build a content writer career, I’m not a newbie, not yet
