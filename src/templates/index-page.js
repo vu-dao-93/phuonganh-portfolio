@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import Layout from "../components/Layout";
+import Features from "../components/Features";
+import BlogRoll from "../components/BlogRoll";
 
 export const IndexPageTemplate = ({
   image,
@@ -17,33 +17,29 @@ export const IndexPageTemplate = ({
   experience,
   avatar,
   aboutMe,
-  aboutPage
+  aboutPage,
 }) => (
   <div>
     <div className="columns">
       <div className="column is-10 is-offset-1">
         <div className="columns">
-          <div className="column is-4">
-            <section className="section" style={{
-              backgroundColor: '#ffca34',
-            }}>
+          <div className="column is-6">
+            <section className="section">
               <img src={avatar.childImageSharp.fluid.src} />
             </section>
           </div>
-          <div className="column">
-            <section className="section">
+          <div className="column flex-vertical-center">
+            <section className="section is-size-5">
               <div className="content">
-                <h3 className="">Experiences</h3>
-                {experience.map(({ company, title, time }) => (
-                  <div className="content">
-                    <div className="has-text-weight-bold  label">{title}</div>
-                    <div className="">{company}</div>
-                    <div className="">{time}</div>
-                  </div>
-                ))}
+                <h1 style={{ fontSize: '2.5em' }}>Phuong-Anh P. Nguyen</h1>
+                <p>
+                  On the path to build a content writer career, I’m not a
+                  newbie, not yet an expert. Customer focused, detail and result
+                  oriented are among my luggage. The next journey I’m looking
+                  for is where I can learn more techniques, sharpen skills, and
+                  feel free to be myself.
+                </p>
               </div>
-              <h1 className="title">{aboutPage.title}</h1>
-              <p>{aboutPage.description}</p>
             </section>
           </div>
         </div>
@@ -90,7 +86,7 @@ export const IndexPageTemplate = ({
       </div>
     </section>
   </div>
-)
+);
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -104,12 +100,12 @@ IndexPageTemplate.propTypes = {
   }),
   aboutMe: PropTypes.shape({
     title: PropTypes.string,
-    content: PropTypes.string
-  })
-}
+    content: PropTypes.string,
+  }),
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -127,8 +123,8 @@ const IndexPage = ({ data }) => {
         avatar={frontmatter.avatar}
       />
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -136,9 +132,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -175,7 +171,7 @@ export const pageQuery = graphql`
         }
         avatar {
           childImageSharp {
-            fluid(maxWidth: 500, quality: 100) {
+            fluid(maxWidth: 1020, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -196,4 +192,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
