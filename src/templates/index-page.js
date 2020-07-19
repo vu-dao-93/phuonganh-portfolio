@@ -26,7 +26,7 @@ export const IndexPageTemplate = ({
         <div className="columns">
           <div className="column is-6">
             <section className="section">
-              <img src={!!avatar.childImageSharp ? avatar.childImageSharp.fluid.src : image} />
+              <img src={!!avatar.childImageSharp ? avatar.childImageSharp.fluid.src : avatar} />
             </section>
           </div>
           <div className="column flex-vertical-center">
