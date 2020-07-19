@@ -9,6 +9,7 @@ import BlogRoll from "../components/BlogRoll";
 export const IndexPageTemplate = ({
   image,
   title,
+  name,
   heading,
   subheading,
   mainpitch,
@@ -25,13 +26,13 @@ export const IndexPageTemplate = ({
         <div className="columns">
           <div className="column is-6">
             <section className="section">
-              <img src={avatar.childImageSharp.fluid.src} />
+              <img src={!!avatar.childImageSharp ? avatar.childImageSharp.fluid.src : image} />
             </section>
           </div>
           <div className="column flex-vertical-center">
             <section className="section is-size-5">
               <div className="content">
-                <h1 style={{ fontSize: '2.5em' }}>Phuong-Anh P. Nguyen</h1>
+                <h1 style={{ fontSize: '2.5em' }}>{name}</h1>
                 <p>
                   On the path to build a content writer career, I’m not a
                   newbie, not yet an expert. Customer focused, detail and result
@@ -91,6 +92,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  name: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -112,6 +114,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        name={frontmatter.name}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
@@ -141,6 +144,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        name
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -186,7 +190,7 @@ export const pageQuery = graphql`
           title
         }
         aboutPage {
-          description
+          content
           title
         }
       }

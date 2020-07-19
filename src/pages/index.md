@@ -4,6 +4,7 @@ heading: Sleepy Bear's space
 subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
 title: Sleepy Bear's space
+name: Phuong-Anh P. Nguyen
 avatar: /img/phuonganh_avatar-1000.png
 aboutMe:
   title: About me
@@ -86,7 +87,7 @@ main:
 image: /img/home-jumbotron.jpg
 aboutPage:
   title: What is this?
-  description: Whatever you imagine it to be.
+  content: Whatever you imagine it to be.
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that

@@ -87,7 +87,7 @@ collections:
               fields:
                 [
                   { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: markdown },
+                  { label: Content, name: content, widget: markdown },
                 ],
             }
           - {
