@@ -19,7 +19,6 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
-avatar: /img/phuonganh_avatar-1000.png
 experience:
   - company: " CARE Education English Center"
     title: Content Team Leader
