@@ -8,7 +8,7 @@ import IndexPagePreview from './preview-templates/IndexPagePreview'
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 
-CMS.registerPreviewStyle('./webfonts.css')
+CMS.registerPreviewStyle('/webfonts.css')
 
 CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('about', AboutPagePreview)
