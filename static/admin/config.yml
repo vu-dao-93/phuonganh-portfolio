@@ -60,16 +60,6 @@ collections:
                 ],
             }
           - {
-              label: Contact,
-              name: contact,
-              widget: list,
-              fields:
-                [
-                  { label: Icon, name: icon, widget: image },
-                  { label: Info, name: info, widget: string },
-                ],
-            }
-          - {
               label: Experience,
               name: experience,
               widget: list,
