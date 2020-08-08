@@ -5,13 +5,13 @@ subheading: Support sustainable farming while enjoying a cup
 templateKey: index-page
 title: Sleepy Bear's space
 name: Phuong-Anh P. Nguyen
-avatar: /img/phuonganh_avatar-1000.png
 aboutMe:
   title: About me
-  content: On the path to build a content writer career, I’m not a newbie, not yet
-    an expert. Customer focused, detail and result oriented are among my
-    luggage. The next journey I’m looking for is where I can learn more
-    techniques, sharpen skills, and feel free to be myself.
+  content: >-
+    # This is a heading
+
+
+    On the path to build a content writer career, I’m not a newbie, not yet an expert. Customer focused, detail and result oriented are among my luggage. The next journey I’m looking for is where I can learn more techniques, sharpen skills, and feel free to be myself.
 mainpitch:
   title: Why Kaldi
   description: >
@@ -19,6 +19,7 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
+avatar: /img/phuonganh_avatar-1000.png
 experience:
   - company: " CARE Education English Center"
     title: Content Team Leader
