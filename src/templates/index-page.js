@@ -204,7 +204,13 @@ export const pageQuery = graphql`
         }
         indexPage {
           type
-          image
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1020, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           text
           heading
           item {
