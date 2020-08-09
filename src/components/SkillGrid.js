@@ -10,7 +10,7 @@ function SkillGrid({ heading, item }) {
             <div className="column is-10 is-offset-1">
               <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
               <div>
-                {item.map(({ skill, level }) => (
+                {item.length && item.map(({ skill, level }) => (
                   <div>{skill} <Rating number={level} /></div>
                 ))}
               </div>
