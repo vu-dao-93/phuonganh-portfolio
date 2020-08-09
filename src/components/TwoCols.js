@@ -12,7 +12,7 @@ function TwoCols({ image, text }) {
             </section>
           </div>
           <div className="column flex-vertical-center">
-            <section className="section is-size-5">
+            <section className="section">
               <div className="content">
                 <ReactMarkdown source={text} />
               </div>
