@@ -20,7 +20,7 @@ export const IndexPageTemplate = ({
   indexPage,
 }) => (
   <div>
-    {indexPage.map(({ type, ...props}) => {
+    {indexPage && indexPage.map(({ type, ...props}) => {
       switch (type) {
         case 'twoCols':
           
