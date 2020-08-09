@@ -1,10 +1,12 @@
 import React from "react";
+import ReactMarkdown from 'react-markdown'
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
+import TwoCols from "../components/TwoCols";
 
 export const IndexPageTemplate = ({
   image,
@@ -19,6 +21,7 @@ export const IndexPageTemplate = ({
   avatar,
   aboutMe,
   aboutPage,
+  indexPage,
 }) => (
   <div>
     <div className="columns">
@@ -32,14 +35,8 @@ export const IndexPageTemplate = ({
           <div className="column flex-vertical-center">
             <section className="section is-size-5">
               <div className="content">
-                <h1 style={{ fontSize: '2.5em' }}>{name}</h1>
-                <p>
-                  On the path to build a content writer career, I’m not a
-                  newbie, not yet an expert. Customer focused, detail and result
-                  oriented are among my luggage. The next journey I’m looking
-                  for is where I can learn more techniques, sharpen skills, and
-                  feel free to be myself.
-                </p>
+                <h1>{name}</h1>
+                <ReactMarkdown source={aboutMe.content} />
               </div>
             </section>
           </div>
@@ -86,6 +83,16 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
+    {indexPage.map(({ type, ...props}) => {
+      switch (type) {
+        case 'twoCols':
+          
+          return <TwoCols {...props} />
+      
+        default:
+          return type;
+      }
+    })}
   </div>
 );
 
@@ -104,6 +111,7 @@ IndexPageTemplate.propTypes = {
     title: PropTypes.string,
     content: PropTypes.string,
   }),
+  indexPage: PropTypes.arrayOf(PropTypes.object)
 };
 
 const IndexPage = ({ data }) => {
@@ -124,6 +132,7 @@ const IndexPage = ({ data }) => {
         aboutPage={frontmatter.aboutPage}
         experience={frontmatter.experience}
         avatar={frontmatter.avatar}
+        indexPage={frontmatter.indexPage}
       />
     </Layout>
   );
@@ -192,6 +201,16 @@ export const pageQuery = graphql`
         aboutPage {
           content
           title
+        }
+        indexPage {
+          type
+          image
+          text
+          heading
+          item {
+            level
+            skill
+          }
         }
       }
     }

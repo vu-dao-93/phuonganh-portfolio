@@ -1,3 +1,5 @@
+local_backend: true
+
 backend:
   name: git-gateway
   branch: master
@@ -87,10 +89,43 @@ collections:
               fields:
                 [
                   { label: Title, name: title, widget: string },
+                  { label: Details, name: details, widget: list },
+                ],
+            }
+          - {
+              label: "Index Page",
+              name: indexPage,
+              widget: list,
+              types:
+                [
                   {
-                    label: Details,
-                    name: details,
-                    widget: list,
+                    label: "Two Columns",
+                    name: "twoCols",
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: markdown },
+                      ],
+                  },
+                  {
+                    label: "Skill Grid",
+                    name: "skillGrid",
+                    widget: object,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        {
+                          label: Items,
+                          name: item,
+                          widget: list,
+                          fields:
+                            [
+                              { label: "Skill", name: "skill", widget: string },
+                              { label: "Level", name: "level", widget: number, valueType: float, step: 0.5 },
+                            ]
+                        },
+                      ],
                   },
                 ],
             }
