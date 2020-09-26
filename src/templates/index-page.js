@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import TwoCols from "../components/TwoCols";
 import SkillGrid from "../components/SkillGrid";
@@ -20,15 +19,15 @@ export const IndexPageTemplate = ({
   indexPage,
 }) => (
   <div>
-    {indexPage && indexPage.map(({ type, ...props}) => {
+    {indexPage && indexPage.map(({ type, ...props}, index) => {
       switch (type) {
         case 'twoCols':
           
-          return <TwoCols {...props} />
+          return <TwoCols key={index} {...props} />
       
         case 'skillGrid':
           
-          return <SkillGrid {...props} />
+          return <SkillGrid key={index} {...props} />
       
         default:
           return type;
@@ -40,15 +39,6 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
@@ -158,6 +148,7 @@ export const pageQuery = graphql`
             }
           }
           text
+          isImageRight
           heading
           item {
             level

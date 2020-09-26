@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
-function TwoCols({ image, text }) {
+import './twoCols.sass'
+
+function TwoCols({ image, text, isImageRight }) {
   return (
     <div className="columns">
       <div className="column is-10 is-offset-1">
-        <div className="columns">
+        <div className={"columns " + (isImageRight && 'flex-row-reverse')}>
           <div className="column is-6">
             <section className="section">
               <img src={!!image.childImageSharp ? image.childImageSharp.fluid.src : image} />
