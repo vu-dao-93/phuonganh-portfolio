@@ -1,7 +1,7 @@
 import React from 'react'
-import Rating from './Rating'
+import Rating from '../Rating'
 
-function SkillGrid({ heading, item }) {
+function SkillGrid({ heading, item } : { heading: string, item: { skill: string, level: number }[] }) {
   return (
     <section className="section">
       <div className="container">
@@ -17,7 +17,7 @@ function SkillGrid({ heading, item }) {
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </section>
   )
 }

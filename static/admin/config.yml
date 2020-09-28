@@ -71,7 +71,7 @@ collections:
             }
           - {
               label: "Index Page",
-              name: indexPage,
+              name: indexWidget,
               widget: list,
               types:
                 [
@@ -83,7 +83,8 @@ collections:
                       [
                         { label: Image, name: image, widget: image },
                         { label: Text, name: text, widget: markdown },
-                        { label: "Image is on the right", name: isImageRight, widget: boolean }
+                        { label: "Image is on the right", name: isImageRight, widget: boolean, required: false },
+                        { label: "Use full page width", name: fullWidth, widget: boolean, required: false }
                       ],
                   },
                   {

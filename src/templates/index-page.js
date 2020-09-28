@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
@@ -7,31 +6,18 @@ import BlogRoll from "../components/BlogRoll";
 import TwoCols from "../components/TwoCols";
 import SkillGrid from "../components/SkillGrid";
 
+const indexWidgetMap = {
+  'twoCols': TwoCols,
+  'skillGrid': SkillGrid,
+}
+
 export const IndexPageTemplate = ({
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-  experience,
-  aboutPage,
-  indexPage,
+  indexWidget,
 }) => (
   <div>
-    {indexPage && indexPage.map(({ type, ...props}, index) => {
-      switch (type) {
-        case 'twoCols':
-          
-          return <TwoCols key={index} {...props} />
-      
-        case 'skillGrid':
-          
-          return <SkillGrid key={index} {...props} />
-      
-        default:
-          return type;
-      }
+    {indexWidget && indexWidget.map(({ type, ...props}, index) => {
+      const Widget = indexWidgetMap[type]
+      return Widget ? <Widget key={index} {...props} /> : type;
     })}
     <section className="section section--gradient">
       <div className="container">
@@ -59,46 +45,16 @@ export const IndexPageTemplate = ({
   </div>
 );
 
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-  indexPage: PropTypes.arrayOf(PropTypes.object)
-};
-
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-        aboutPage={frontmatter.aboutPage}
-        experience={frontmatter.experience}
-        indexPage={frontmatter.indexPage}
+        indexWidget={frontmatter.indexWidget}
       />
     </Layout>
   );
-};
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
 };
 
 export default IndexPage;
@@ -107,38 +63,7 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
-        }
-        experience {
-          company
-          time
-          title
-        }
-        aboutPage {
-          content
-          title
-        }
-        indexPage {
+        indexWidget {
           type
           image {
             childImageSharp {
@@ -149,6 +74,7 @@ export const pageQuery = graphql`
           }
           text
           isImageRight
+          fullWidth
           heading
           item {
             level

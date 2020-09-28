@@ -1,6 +1,6 @@
 ---
 contact: []
-indexPage:
+indexWidget:
   - type: twoCols
     image: /img/phuonganh_avatar-1000.png
     text: >-
@@ -9,6 +9,7 @@ indexPage:
 
       On the path to build a content writing career, I’m not a newbie, not yet an expert. Customer-focused, detail and result oriented are among my luggage. The next journey I’m looking for is where I can learn more techniques, sharpen skills, and feel free to be myself.
     isImageRight: false
+    fullWidth: true
   - type: skillGrid
     heading: What I can do
     item:
@@ -22,10 +23,14 @@ indexPage:
         level: 2
   - type: twoCols
     image: /img/nyan-pipa.jpg
-    text: |-
-      # Nyan Pipa
+    text: >-
+      ## Nyan Pipa
+
 
       Hello, I am Nyan Pipa. I am origin from the Nyan Cat.
+
+
+      I am a 3-year-old British shorthair cat, but I am actually from Estonia. My birthday is in August. I am a very curious and friendly cat, and I love getting to know new people.
     isImageRight: true
 heading: Sleepy Bear's space
 subheading: Support sustainable farming while enjoying a cup
