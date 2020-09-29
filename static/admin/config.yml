@@ -48,27 +48,6 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
-          - {
-              label: "About Page",
-              name: aboutPage,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Content, name: content, widget: markdown },
-                ],
-            }
-          - {
-              label: Interest,
-              name: interest,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Details, name: details, widget: list },
-                ],
-            }
           - {
               label: "Index Page",
               name: indexWidget,

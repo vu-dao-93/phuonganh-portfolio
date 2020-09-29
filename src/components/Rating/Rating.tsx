@@ -1,7 +1,7 @@
 import React from 'react'
 import './rating.sass'
 
-function Rating({ number, max=5 } : { number: number, max: number }) {
+function Rating({ number, max=5 } : { number: number, max?: number }) {
   return (
     <div className="rating">
       {Array.from({ length: max}, () => null).map((val, index) => {

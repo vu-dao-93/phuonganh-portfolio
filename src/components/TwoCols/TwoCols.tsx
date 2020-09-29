@@ -4,14 +4,21 @@ import { ImageSharp } from '../../types/image'
 
 import './twoCols.sass'
 
-function TwoCols({ image, text, isImageRight, fullWidth } : { image: ImageSharp | string, text: string, isImageRight: boolean, fullWidth: boolean}) {
+type TwoColsProps = {
+  image: ImageSharp | string,
+  text: string,
+  isImageRight: boolean,
+  fullWidth: boolean
+}
+
+function TwoCols({ image, text, isImageRight, fullWidth } : TwoColsProps) {
   const content = (
     <div className="columns">
       <div className="column is-10 is-offset-1">
         <div className={"columns " + (isImageRight && 'flex-row-reverse')}>
           <div className="column is-6">
             <section className="section">
-              <img src={typeof image !== 'string' ? image.childImageSharp.fluid.src : image} />
+              <img src={(image && typeof image !== 'string') ? image.childImageSharp.fluid.src : image} />
             </section>
           </div>
           <div className="column flex-vertical-center">

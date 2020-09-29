@@ -1,7 +1,12 @@
 import React from 'react'
 import Rating from '../Rating'
 
-function SkillGrid({ heading, item } : { heading: string, item: { skill: string, level: number }[] }) {
+type SkillGridProps = {
+  heading: string,
+  item: { skill: string, level: number }[]
+}
+
+function SkillGrid({ heading, item } : SkillGridProps) {
   return (
     <section className="section">
       <div className="container">
@@ -10,9 +15,9 @@ function SkillGrid({ heading, item } : { heading: string, item: { skill: string,
             <div className="column is-10 is-offset-1">
               <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
               <div>
-                {item.length && item.map(({ skill, level }) => (
+                {item && item.length && item.map(({ skill, level }) => (
                   <div key={skill}>{skill} <Rating number={level} /></div>
-                ))}
+                ))} 
               </div>
             </div>
           </div>
