@@ -2,9 +2,6 @@
 contact: []
 heading: Sleepy Bear's space
 subheading: Support sustainable farming while enjoying a cup
-templateKey: index-page
-title: Sleepy Bear's space
-name: Phuong-Anh P. Nguyen
 aboutMe:
   title: About me
   content: >-
@@ -12,6 +9,7 @@ aboutMe:
 
 
     On the path to build a content writer career, I’m not a newbie, not yet an expert. Customer focused, detail and result oriented are among my luggage. The next journey I’m looking for is where I can learn more techniques, sharpen skills, and feel free to be myself.
+templateKey: index-page
 mainpitch:
   title: Why Kaldi
   description: >
@@ -19,7 +17,6 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
-avatar: /img/phuonganh_avatar-1000.png
 experience:
   - company: " CARE Education English Center"
     title: Content Team Leader
@@ -27,6 +24,10 @@ experience:
   - company: Ken Media Services
     title: English Content Writer
     time: May 2018 - May 2020
+aboutPage:
+  title: What is this?
+  description: Whatever you imagine it to be.
+  content: Whatever you imagine it to be
 interest:
   title: Interest
   details:
@@ -34,6 +35,7 @@ interest:
     - Psychology
     - Movies
     - Travel
+name: Phuong-Anh P. Nguyen
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -69,6 +71,17 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+title: Sleepy Bear's space
+indexWidget:
+  - type: twoCols
+    image: /img/phuonganh_avatar-1000.png
+    text: >-
+      # Phuong-Anh P. Nguyen
+
+
+      On the path to build a content writing career, I’m not a newbie, not yet an expert. Customer-focused, detail and result oriented are among my luggage. The next journey I’m looking for is where I can learn more techniques, sharpen skills, and feel free to be myself.
+    fullWidth: true
+avatar: /img/phuonganh_avatar-1000.png
 main:
   heading: Great coffee with no compromises
   description: >
@@ -86,10 +99,6 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 image: /img/home-jumbotron.jpg
-aboutPage:
-  title: What is this?
-  description: Whatever you imagine it to be.
-  content: Whatever you imagine it to be
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that
