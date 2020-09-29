@@ -81,6 +81,11 @@ indexWidget:
 
       On the path to build a content writing career, I’m not a newbie, not yet an expert. Customer-focused, detail and result oriented are among my luggage. The next journey I’m looking for is where I can learn more techniques, sharpen skills, and feel free to be myself.
     fullWidth: true
+  - type: skillGrid
+    heading: What I can do
+    item:
+      - skill: Content writing
+        level: 3.5
 avatar: /img/phuonganh_avatar-1000.png
 main:
   heading: Great coffee with no compromises
