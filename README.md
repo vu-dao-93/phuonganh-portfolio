@@ -1,17 +1,17 @@
-# Gatsby + Netlify CMS Starter
+# Gatsby + Netlify CMS Blog and Portfolio
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f4b438bb-e797-462f-b051-f57a724119d4/deploy-status)](https://app.netlify.com/sites/sleepy-bears-corner/deploys)
 
-**Note:** This starter uses [Gatsby v2](https://www.gatsbyjs.org/blog/2018-09-17-gatsby-v2/).
-
-This repo contains an example business website that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org): **[Demo Link](https://gatsby-netlify-cms.netlify.com/)**.
+This repo contains a personal blog and portfolio that is built with [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org): **[Link to the site](https://sleepy-bears-corner.netlify.app/)**. Also, you can have a look at the [admin page](https://sleepy-bears-corner.netlify.app/admin). For now anyone can login.
 
 It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
+
+It is based on a Gatsby + Netlify CMS starter for Kaldi coffee company. **[Demo link](https://gatsby-netlify-cms.netlify.app/)**.
 
 ## Features
 
 - A simple landing page with blog functionality built with Netlify CMS
-- Editabe Pages: Landing, About, Product, Blog-Collection and Contact page with Netlify Form support
+- Editabe Pages: Landing, About, Blog-Collection and Contact page with Netlify Form support
 - Create Blog posts from Netlify CMS
 - Tags: Separate page for posts under each tag
 - Basic directory organization
@@ -23,6 +23,25 @@ It follows the [JAMstack architecture](https://jamstack.org) by using Git as a s
 - Netlify function support, see `lambda` folder
 - Perfect score on Lighthouse for SEO, Accessibility and Performance (wip:PWA)
 - ..and more
+
+## What I have done
+- Rebuild the landing page using custom Widget, similar to how Advanced Custom Field works in WordPress
+- Add `TwoCols` component to creates a section with and image alongside text
+- Add `SkillGrid` component to creates a section with all the skills and rating of the person
+- Refactor landing page components to TypeScript
+- Enable editorial flow: Changes to a page can be saved as draft before publishing to the user
+
+## Planned features
+
+- The user can add videos to a page/ post
+- The user can hide release date of a post
+- The user can add tables to a page/ post
+- The user can change the slug of blog posts
+- Improve build time (currently building all pages for each deployment, taking about 3m total)
+- Refactor all pages and components to TypeScript
+- Refactor styling to use styled-component
+- Add testing for components using react testing-library
+- ... and more (you can see them in the issues tab)
 
 ## Prerequisites
 
@@ -57,6 +76,13 @@ $ npm run build
 $ netlify dev # or ntl dev
 ```
 
+### Access to local CMS proxy
+
+Start the CMS proxy from the terminal
+```
+$ npx netlify-cms-proxy-server
+```
+
 ### Media Libraries (installed, but optional)
 
 Media Libraries have been included in this starter as a default. If you are not planning to use `Uploadcare` or `Cloudinary` in your project, you **can** remove them from module import and registration in `src/cms/cms.js`. Here is an example of the lines to comment or remove them your project.
@@ -68,7 +94,6 @@ import CMS from 'netlify-cms-app'
 
 import AboutPagePreview from './preview-templates/AboutPagePreview'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
-import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 
 // CMS.registerMediaLibrary(uploadcare);
@@ -76,7 +101,6 @@ import IndexPagePreview from './preview-templates/IndexPagePreview'
 
 CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 ```
 
