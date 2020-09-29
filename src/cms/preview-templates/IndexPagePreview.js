@@ -22,6 +22,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           experience={data.experience || []}
           name={data.name}
           avatar={getAsset(data.avatar)}
+          indexWidget={data.indexWidget}
         />
       </Layout>
     )
