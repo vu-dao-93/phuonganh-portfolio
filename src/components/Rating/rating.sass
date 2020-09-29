@@ -1,0 +1,28 @@
+.rating
+  display: flex;
+  flex-direction: row;
+  &__star
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 2.5px;
+    border-radius: 10px;
+    transform: rotate(-45deg);
+    &--empty
+      background: #dfdfdf;
+    &--half
+      background: #dfdfdf;
+      &::after
+        content: "";
+        background: #ffca34;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 10px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        z-index: 2;
+    &--full
+      background: #ffca34;

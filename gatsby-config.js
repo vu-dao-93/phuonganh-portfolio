@@ -7,6 +7,13 @@ module.exports = {
       customer-focused are among my luggage.`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        allExtensions: true, // defaults to false
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
@@ -38,6 +45,10 @@ module.exports = {
           google: [
             {
               family: "Dancing Script",
+              variants: ["400", "700"],
+            },
+            {
+              family: "Ledger",
               variants: ["400"],
             },
           ],

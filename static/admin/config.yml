@@ -1,3 +1,5 @@
+local_backend: true
+
 backend:
   name: git-gateway
   branch: master
@@ -46,51 +48,42 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Name, name: name, widget: string }
-          - { label: Avatar, name: avatar, widget: image }
           - {
-              label: "About Me",
-              name: aboutMe,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Content, name: content, widget: markdown },
-                ],
-            }
-          - {
-              label: Experience,
-              name: experience,
+              label: "Index Page",
+              name: indexWidget,
               widget: list,
-              fields:
+              types:
                 [
-                  { label: Company, name: company, widget: string },
-                  { label: Title, name: title, widget: string },
-                  { label: Time, name: time, widget: string },
-                ],
-            }
-          - {
-              label: "About Page",
-              name: aboutPage,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Content, name: content, widget: markdown },
-                ],
-            }
-          - {
-              label: Interest,
-              name: interest,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
                   {
-                    label: Details,
-                    name: details,
-                    widget: list,
+                    label: "Two Columns",
+                    name: "twoCols",
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: Text, name: text, widget: markdown },
+                        { label: "Image is on the right", name: isImageRight, widget: boolean, required: false },
+                        { label: "Use full page width", name: fullWidth, widget: boolean, required: false }
+                      ],
+                  },
+                  {
+                    label: "Skill Grid",
+                    name: "skillGrid",
+                    widget: object,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        {
+                          label: Items,
+                          name: item,
+                          widget: list,
+                          fields:
+                            [
+                              { label: "Skill", name: "skill", widget: string },
+                              { label: "Level", name: "level", widget: number, valueType: float, step: 0.5 },
+                            ]
+                        },
+                      ],
                   },
                 ],
             }

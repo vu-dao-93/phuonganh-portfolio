@@ -1,17 +1,46 @@
 ---
 contact: []
+indexWidget:
+  - type: twoCols
+    image: /img/phuonganh_avatar-1000.png
+    text: >-
+      # Phuong-Anh P. Nguyen
+
+
+      On the path to build a content writing career, I’m not a newbie, not yet an expert. Customer-focused, detail and result oriented are among my luggage. The next journey I’m looking for is where I can learn more techniques, sharpen skills, and feel free to be myself.
+    isImageRight: false
+    fullWidth: true
+  - type: skillGrid
+    heading: What I can do
+    item:
+      - skill: Content Writing
+        level: 3.5
+      - skill: English
+        level: 4
+      - skill: CMS
+        level: 3
+      - skill: Photoshop, Illustrator
+        level: 2
+  - type: twoCols
+    image: /img/nyan-pipa.jpg
+    text: >-
+      ## Nyan Pipa
+
+
+      Hello, I am Nyan Pipa. I am origin from the Nyan Cat.
+
+
+      I am a 3-year-old British shorthair cat, but I am actually from Estonia. My birthday is in August. I am a very curious and friendly cat, and I love getting to know new people.
+    isImageRight: true
 heading: Sleepy Bear's space
 subheading: Support sustainable farming while enjoying a cup
-templateKey: index-page
-title: Sleepy Bear's space
-name: Phuong-Anh P. Nguyen
 aboutMe:
   title: About me
-  content: >-
-    # This is a heading
-
-
-    On the path to build a content writer career, I’m not a newbie, not yet an expert. Customer focused, detail and result oriented are among my luggage. The next journey I’m looking for is where I can learn more techniques, sharpen skills, and feel free to be myself.
+  content: On the path to build a content writing career, I’m not a newbie, not
+    yet an expert. Customer-focused, detail and result oriented are among my
+    luggage. The next journey I’m looking for is where I can learn more
+    techniques, sharpen skills, and feel free to be myself.
+templateKey: index-page
 mainpitch:
   title: Why Kaldi
   description: >
@@ -19,7 +48,6 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
-avatar: /img/phuonganh_avatar-1000.png
 experience:
   - company: " CARE Education English Center"
     title: Content Team Leader
@@ -34,6 +62,7 @@ interest:
     - Psychology
     - Movies
     - Travel
+name: Phuong-Anh P. Nguyen
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -69,6 +98,8 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+title: Sleepy Bear's space
+avatar: /img/phuonganh_avatar-1000.png
 main:
   heading: Great coffee with no compromises
   description: >
