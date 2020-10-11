@@ -8,10 +8,11 @@ type TwoColsProps = {
   image: ImageSharp | string,
   text: string,
   isImageRight: boolean,
-  fullWidth: boolean
+  fullWidth: boolean,
+  yellowBg: boolean,
 }
 
-function TwoCols({ image, text, isImageRight, fullWidth } : TwoColsProps) {
+function TwoCols({ image, text, isImageRight, fullWidth, yellowBg } : TwoColsProps) {
   const content = (
     <div className="columns">
       <div className="column is-10 is-offset-1">
@@ -36,7 +37,7 @@ function TwoCols({ image, text, isImageRight, fullWidth } : TwoColsProps) {
     return content
   }
   return (
-    <section className="section">
+    <section className={"section " + (yellowBg && 'has-background-primary')}>
       <div className="container">
         {content}
       </div>
