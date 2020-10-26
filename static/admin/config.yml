@@ -49,7 +49,7 @@ collections:
               default: "index-page",
             }
           - {
-              label: "Index Page",
+              label: "Index Widget",
               name: indexWidget,
               widget: list,
               types:
@@ -63,7 +63,8 @@ collections:
                         { label: Image, name: image, widget: image },
                         { label: Text, name: text, widget: markdown },
                         { label: "Image is on the right", name: isImageRight, widget: boolean, required: false },
-                        { label: "Use full page width", name: fullWidth, widget: boolean, required: false }
+                        { label: "Use full page width", name: fullWidth, widget: boolean, required: false },
+                        { label: "Yellow background", name: yellowBg, widget: boolean, required: false }
                       ],
                   },
                   {
@@ -81,6 +82,26 @@ collections:
                             [
                               { label: "Skill", name: "skill", widget: string },
                               { label: "Level", name: "level", widget: number, valueType: float, step: 0.5 },
+                            ]
+                        },
+                      ],
+                  },
+                  {
+                    label: "Featured Posts",
+                    name: "featuredPosts",
+                    widget: object,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        {
+                          label: Post,
+                          name: post,
+                          widget: list,
+                          fields:
+                            [
+                              { label: "Title", name: "title", widget: string },
+                              { label: "Description", name: "desc", widget: string },
+                              { label: "Thumbnail", name: "thumbnail", widget: image },
                             ]
                         },
                       ],
