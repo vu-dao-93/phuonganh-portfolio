@@ -1,0 +1,19 @@
+@import "./colors"
+
+$primary: $sb-yellow
+
+.navbar .navbar-menu
+  box-shadow:none !important
+  justify-content: flex-end
+  .navbar-start
+    margin-right: initial
+
+.navbar-item .icon
+  color: $primary
+// Override for use of svg's from https://simpleicons.org/
+.icon svg
+  width: 1.5rem
+  height: 1.5rem
+  fill: currentColor
+.navbar-brand .navbar-item.logo
+  padding: 0 1rem
