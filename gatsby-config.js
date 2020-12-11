@@ -84,6 +84,9 @@ module.exports = {
               destinationDir: 'static',
             },
           },
+          {
+            resolve: `gatsby-remark-video-shortcode`
+          }
         ],
       },
     },
